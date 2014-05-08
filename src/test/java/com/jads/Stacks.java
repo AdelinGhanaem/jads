@@ -4,9 +4,7 @@ import org.junit.Test;
 
 import java.util.Stack;
 
-/**
-	* @author Adelin Ghanayem adelin.ghanaem@effortel.com
-	*/
+
 public class Stacks {
 
 

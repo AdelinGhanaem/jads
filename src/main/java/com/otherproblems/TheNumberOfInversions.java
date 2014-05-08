@@ -1,8 +1,6 @@
 package com.otherproblems;
 
-/**
-	* @author Adelin Ghanayem adelin.ghanaem@effortel.com
-	*/
+
 public class TheNumberOfInversions {
 
 	public static void main(String[] args) {

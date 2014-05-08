@@ -1,8 +1,6 @@
 package com.jads;
 
-/**
-	* @author Adelin Ghanayem adelin.ghanaem@effortel.com
-	*/
+
 public class MyInsertionSort implements SortAlgorithm {
 	@Override
 	public <T extends Comparable<? super T>> T[] sort(T[] unsortedArray) {

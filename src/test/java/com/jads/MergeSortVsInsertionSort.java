@@ -5,9 +5,7 @@ import org.testng.annotations.Test;
 
 import java.util.Random;
 
-/**
-	* @author Adelin Ghanayem adelin.ghanaem@effortel.com
-	*/
+
 public class MergeSortVsInsertionSort {
 
 
