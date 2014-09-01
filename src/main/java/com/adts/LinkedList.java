@@ -3,6 +3,7 @@ package com.adts;
 import java.io.PrintStream;
 
 /**
+ *
  * Created by adelin on 14-8-21.
  */
 public class LinkedList<T> implements List<T> {
