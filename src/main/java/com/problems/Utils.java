@@ -1,4 +1,4 @@
-package com.jads;
+package com.problems;
 
 public class Utils {
 

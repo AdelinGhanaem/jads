@@ -1,4 +1,4 @@
-package com.otherproblems;
+package com.problems;
 
 
 public class BruteForceInversionsCounter {

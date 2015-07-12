@@ -1,5 +1,8 @@
 package com.jads;
 
+import com.problems.ShellSort;
+import com.problems.SortAlgorithm;
+
 /**
  * @author Adelin Ghanayem adelin.ghanaem@clouway.com
  */

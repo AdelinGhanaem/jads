@@ -1,6 +1,9 @@
 package com.jads;
 
 
+import com.problems.InsertionSort;
+import com.problems.MergeSort;
+import com.problems.SortAlgorithm;
 import org.junit.Test;
 
 import java.util.Random;

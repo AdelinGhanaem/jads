@@ -1,5 +1,6 @@
 package com.jads;
 
+import com.problems.SortAlgorithm;
 import org.junit.Before;
 import org.junit.Test;
 

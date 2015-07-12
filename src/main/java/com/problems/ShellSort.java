@@ -1,4 +1,4 @@
-package com.jads;
+package com.problems;
 
 /**
  * @author Adelin Ghanayem adelin.ghanaem@clouway.com
