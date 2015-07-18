@@ -2,7 +2,7 @@ package com.jads;
 
 import org.junit.Test;
 
-public class MergeSortTest {
+public class MyMergeSortTest {
 
 
     @Test

@@ -5,7 +5,6 @@ import java.io.BufferedReader;
 import java.io.File;
 import java.io.FileReader;
 import java.io.IOException;
-import java.net.URL;
 import java.util.LinkedList;
 import java.util.List;
 
@@ -31,8 +30,6 @@ public class TheNumberOfInversions {
     public void fromFile() throws IOException {
 
 
-        URL url = TheNumberOfInversions.class.getResource("/home/adelin/workspace/jads/src/main/resources/IntegerArray.txt");
-
         File file = new File("/home/adelin/workspace/jads/src/main/resources/IntegerArray.txt");
 
         if (!file.exists()) {
@@ -51,14 +48,16 @@ public class TheNumberOfInversions {
             line = bufferedReader.readLine();
         }
 
+
+
         DivideAndConquerInversionsCounter counter = new DivideAndConquerInversionsCounter();
 
-        Integer[] integers1 = new Integer[integers.size()];
-
-        integers1 = integers.toArray(integers1);
-
-        System.out.println(counter.count(integers1));
+//        System.out.println(counter.count(integers1));
 
 
     }
+
+
+
+
 }

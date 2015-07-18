@@ -2,7 +2,7 @@ package com.jads;
 
 
 import com.problems.InsertionSort;
-import com.problems.MergeSort;
+import com.problems.MyMergeSort;
 import com.problems.SortAlgorithm;
 import org.junit.Test;
 
@@ -17,7 +17,7 @@ public class MergeSortVsInsertionSort {
 
 		Integer[] integers = getRandomArray(200000);
 
-		System.out.println("Merge Sort : "+execute(integers, new MergeSort()).getTime());
+		System.out.println("Merge Sort : "+execute(integers, new MyMergeSort()).getTime());
 
 	}
 

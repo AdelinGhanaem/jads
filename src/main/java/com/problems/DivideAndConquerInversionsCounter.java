@@ -32,7 +32,7 @@ public class DivideAndConquerInversionsCounter {
 
         int inversion = 0;
 
-		while (rightStart > center) {
+		while (rightStart > center) {   // this shit is still n^2 !!!
 
             int leftStart = left;
 

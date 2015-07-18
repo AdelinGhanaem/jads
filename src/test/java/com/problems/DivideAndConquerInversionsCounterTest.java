@@ -9,6 +9,7 @@ import java.io.IOException;
 import java.util.LinkedList;
 import java.util.List;
 
+import static com.problems.Utils.getIntegersFromFile;
 import static org.hamcrest.MatcherAssert.assertThat;
 import static org.hamcrest.core.Is.is;
 import static org.junit.Assert.fail;
@@ -20,13 +21,41 @@ public class DivideAndConquerInversionsCounterTest {
     public void countsInversions() throws Exception {
 
 
-        Integer[] integers = new Integer[]{3, 2, 1};
+        Integer[] integers = new Integer[]{4,3, 2, 1};
+        DivideAndConquerInversionsCounter counter = new DivideAndConquerInversionsCounter();
+        assertThat(MergeSort.mergeSort(integers), is(6));
+
+    }
+
+    /**
+     * Uses the merge sort that is implemented in
+     * Data Structures and Algorithm Analysis ...
+     */
+    @Test
+    public void sortAndCountInversion() throws IOException {
+
+
+        MergeSort mergeSort = new MergeSort();
+
+        int inversions = mergeSort.mergeSort(getIntegersFromFile("/home/adelin/workspace/jads/src/main/resources/IntegerArray.txt"));
+        System.out.println(inversions);
+    }
+
+
+    /**
+     * Uses the merge sort that is implemented in
+     * Data Structures and Algorithm Analysis ...
+     */
+    @Test
+    public void countInversion() throws IOException {
+
 
         DivideAndConquerInversionsCounter counter = new DivideAndConquerInversionsCounter();
 
-        assertThat(counter.count(integers), is(3));
-
+        int inversions = counter.count(getIntegersFromFile("/home/adelin/workspace/jads/src/main/resources/IntegerArray.txt"));
+        System.out.println(inversions);
     }
+
 
 //    @Test
 

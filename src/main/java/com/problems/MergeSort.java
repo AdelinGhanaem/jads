@@ -1,71 +1,64 @@
 package com.problems;
 
+/**
+ * Created by adelin.ghanayem@gmail.com
+ */
+public class MergeSort {
 
-public class MergeSort implements SortAlgorithm {
+    private static <AnyType extends Comparable<? super AnyType>> int mergeSort(AnyType[] a, AnyType[] tmpArray, int left, int right) {
 
+        if (left < right) {
+            int center = (left + right) / 2;
+            int leftInversions = mergeSort(a, tmpArray, left, center);
+            int rightInversions = mergeSort(a, tmpArray, center + 1, right);
+            int split = merge(a, tmpArray, left, center + 1, right);
 
-	@Override
-	public <T extends Comparable<? super T>> T[] sort(T[] unsortedArray) {
-//		T[] tmpArray = (T[]) new Comparable[unsortedArray.length];
+            return leftInversions + rightInversions + split;
+        }
+        return 0;
+    }
 
-		return mergeSort(unsortedArray, 0, unsortedArray.length - 1);
-//		sortArray(unsortedArray, tmpArray, 0, unsortedArray.length);
-	}
-
-	private <T extends Comparable<? super T>> T[] mergeSort(T[] unsortedArray, int left, int right) {
-
-
-		if (left < right) {
-
-			int center = (left + right) / 2;
-
-			T[] leftSorted = mergeSort(unsortedArray, left, center);
-
-			T[] rightSorted = mergeSort(unsortedArray, center + 1, right);
-
-			return merge(leftSorted, rightSorted);
-
-		}
-
-		Comparable[] objects = new Comparable[1];
-
-		objects[0] = unsortedArray[left];
-
-		return (T[]) objects;
-	}
-
-	private <T extends Comparable<? super T>> T[] merge(T[] left, T[] right) {
-		Comparable[] objects = new Comparable[left.length + right.length];
-		int i = 0;
-		int j = 0;
-		int k = 0;
-
-		while (i <= left.length - 1 && j <= right.length - 1) {
+    public static <AnyType extends Comparable<? super AnyType>> int mergeSort(AnyType[] a) {
+        AnyType[] tmpArray = (AnyType[]) new Comparable[a.length];
+        return mergeSort(a, tmpArray, 0, a.length - 1);
+    }
 
 
-			if (left[i].compareTo(right[j]) <= 0) {
-				objects[k] = left[i];
-				i++;
-			} else {
-				objects[k] = right[j];
-				j++;
-			}
-			k++;
-		}
+    private static <AnyType extends Comparable<? super AnyType>> int merge(AnyType[] a, AnyType[] tmpArray, int leftPos, int rightPos, int rightEnd) {
+
+        int inversions = 0;
+        int leftEnd = rightPos - 1;
+        int tmpPos = leftPos;
+        int numElements = rightEnd - leftPos + 1;
+// Main loop
+        while (leftPos <= leftEnd && rightPos <= rightEnd) {
+            if (a[leftPos].compareTo(a[rightPos]) <= 0) {
+                tmpArray[tmpPos++] = a[leftPos++];
+            } else {
+                tmpArray[tmpPos++] = a[rightPos++];
+                inversions++;
+            }
+        }
+
+// Copy rest of first half
+        while (leftPos <= leftEnd) {
+            inversions++;
+            tmpArray[tmpPos++] = a[leftPos++];
+
+        }
 
 
-		while (i <= left.length-1) {
-			objects[k] = left[i];
-			k++;
-			i++;
-		}
+        while (rightPos <= rightEnd) {
+            // Copy rest of right half
+            tmpArray[tmpPos++] = a[rightPos++];
 
-		while (j <= right.length-1) {
-			objects[k] = right[j];
-			k++;
-			j++;
-		}
-		return (T[]) objects;
-	}
+        }
 
+// Copy tmpArray back
+        for (int i = 0; i < numElements; i++, rightEnd--) {
+            a[rightEnd] = tmpArray[rightEnd];
+        }
+
+        return inversions;
+    }
 }
