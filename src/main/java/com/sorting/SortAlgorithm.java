@@ -1,4 +1,4 @@
-package com.problems;
+package com.sorting;
 
 /**
  * @author Adelin Ghanayem adelin.ghanaem@clouway.com

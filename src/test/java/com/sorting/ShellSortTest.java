@@ -1,4 +1,4 @@
-package com.jads;
+package com.sorting;
 
 import com.problems.ShellSort;
 import com.problems.SortAlgorithm;

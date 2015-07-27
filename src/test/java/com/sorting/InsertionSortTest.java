@@ -1,4 +1,4 @@
-package com.jads;
+package com.sorting;
 
 
 import com.problems.InsertionSort;

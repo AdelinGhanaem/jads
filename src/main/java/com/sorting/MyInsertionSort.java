@@ -1,4 +1,4 @@
-package com.problems;
+package com.sorting;
 
 
 public class MyInsertionSort implements SortAlgorithm {

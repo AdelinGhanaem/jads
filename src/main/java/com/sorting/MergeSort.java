@@ -1,7 +1,7 @@
-package com.problems;
+package com.sorting;
 
 
-public class MyMergeSort implements SortAlgorithm {
+public class MergeSort implements SortAlgorithm {
 
 
 	@Override
