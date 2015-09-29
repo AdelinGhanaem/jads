@@ -16,3 +16,5 @@ hs_err_pid*
 jads.iml
 .idea
 
+
+src/test/java/com/tasks/unionfind/SimpleUnionFindTest.java
