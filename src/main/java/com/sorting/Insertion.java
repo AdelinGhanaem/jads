@@ -21,6 +21,7 @@ package com.sorting; /**********************************************************
  ******************************************************************************/
 
 import java.util.Comparator;
+import java.util.Scanner;
 
 import static com.sorting.ArrayHelp.exch;
 import static com.sorting.ArrayHelp.less;
@@ -61,7 +62,7 @@ public class Insertion {
         int index = 0;
         for (int i = 0; i < N; i++) {
             for (int j = i; j > 0 && less(a[j], a[j - 1]); j--) {
-                if(index==6){
+                if (index == 6) {
                     break;
                 }
                 index++;
@@ -152,7 +153,6 @@ public class Insertion {
      ***************************************************************************/
 
 
-
     /***************************************************************************
      * Check if array is sorted - useful for debugging.
      ***************************************************************************/
@@ -190,8 +190,88 @@ public class Insertion {
      * and prints them to standard output in ascending order.
      */
     public static void main(String[] args) {
-        String[] a = {"21","42","57","79 ","93","66","18","85","11","50"};
-        Insertion.sort(a);
-        show(a);
+
+        Scanner scanner = new Scanner(System.in);
+
+        int number = scanner.nextInt();
+        scanner.nextLine();
+        String[][] matrix = new String[number][number];
+        int index = 0;
+        while (scanner.hasNextLine() && index < matrix.length) {
+            matrix[index] = scanner.nextLine().split(" ");
+            index++;
+        }
+
+        int n = 0;
+        int m = 0;
+
+        int fd = 0;
+        int sd = 0;
+
+        while (n < number) {
+            while (m < number) {
+                if (n == m) {
+                    fd += Integer.valueOf(matrix[n][m]);
+                }
+
+                if ((n + m) == number - 1) {
+
+                    sd += Integer.valueOf(matrix[n][m]);
+                }
+
+                m++;
+            }
+            m = 0;
+            n++;
+
+        }
+
+        System.out.println(Math.abs(fd - sd));
+
+    }
+
+
+
+
+//        String[] firstLine = scanner.nextLine().split(" ");
+//        String[] secondLine = scanner.nextLine().split(" ");
+//        String[] thirdLine = scanner.nextLine().split(" ");
+
+//        String[][] matrix = new String[][]{firstLine, secondLine, thirdLine};
+
+//        String[][] matrix = new Insertion().getMatrix("" +
+//                "1 1 1 2 1\n" +
+//                "1 1 2 1 1\n" +
+//                "1 2 2 1 1\n" +
+//                "2 1 1 1 1\n" +
+//                "1 1 1 1 1\n"
+//        );
+
+//        int number = matrix.length;
+
+    private String[][] getMatrix(String matrix) {
+
+        String[] lines = matrix.split("\n");
+
+        int dimensions = lines.length;
+
+        String[][] matrix2 = new String[dimensions][dimensions];
+
+        int n = 0;
+        int m = 0;
+        for (String line : lines) {
+
+            String[] numbers = line.split(" ");
+
+            for (String number : numbers) {
+
+                matrix2[n][m] = number;
+                m++;
+            }
+            m = 0;
+            n++;
+        }
+
+        return matrix2;
     }
 }
