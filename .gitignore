@@ -17,4 +17,7 @@ jads.iml
 .idea
 
 
+*/target
+/target
+
 src/test/java/com/tasks/unionfind/SimpleUnionFindTest.java
