@@ -36,10 +36,7 @@ public class MatricesMultiplication {
                 }
                 result[i][j] = currentCellResult;
             }
-
-
         }
-
 
         for (int i = 0; i < a.length; i++) {
             System.out.println();
