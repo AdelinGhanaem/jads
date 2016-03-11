@@ -1,6 +1,7 @@
 package com.sorting;
 
 /**
+ *
  * Created by adelin.ghanayem@cayetanogaming.com on 8/6/15.
  */
 public class SelectionSort implements SortAlgorithm {
@@ -18,6 +19,7 @@ public class SelectionSort implements SortAlgorithm {
         }
 
         int i = 0;
+
         while (i < unsortedArray.length - 1) {
             int minIndex = i;
             for (int j = i + 1; j < unsortedArray.length; j++) {
@@ -27,6 +29,7 @@ public class SelectionSort implements SortAlgorithm {
 
             }
             swap(unsortedArray, i, minIndex);
+
             i++;
         }
         return unsortedArray;

@@ -2,7 +2,7 @@ package com.sorting;
 
 import org.junit.Test;
 
-import static com.sorting.MergeSort.printArray;
+import static com.sorting.Utils.printArray;
 import static org.junit.Assert.*;
 
 /**

@@ -1,5 +1,7 @@
 package com.problems;
 
+import com.sorting.QuickSort;
+
 /**
  * Created by adelin.ghanayem@gmail.com
  */

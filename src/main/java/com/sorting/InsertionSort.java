@@ -20,6 +20,7 @@ public class InsertionSort implements SortAlgorithm {
       T tmp = unsortedArray[p];
 
       for (j = p; j > 0; j--) {
+
         T prevTemp = unsortedArray[j - 1];
 
         if (tmp.compareTo(prevTemp) < 0) {

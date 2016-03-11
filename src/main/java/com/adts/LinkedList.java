@@ -71,7 +71,6 @@ public class LinkedList<T> implements List<T> {
                 } else {
                     next.setNext(new Node<T>(element, next.getNext(), next));
                 }
-
             }
         } else {
             if (next == null) {
