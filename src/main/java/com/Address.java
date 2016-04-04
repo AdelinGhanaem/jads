@@ -1,4 +1,4 @@
-// you can also use imports, for example:
+package com;// you can also use imports, for example:
 // import java.util.*;
 
 // you can write to stdout for debugging purposes, e.g.
@@ -6,7 +6,7 @@
 import java.util.Map;
 
 
-class Solution {
+class Address {
     public int solution(int[] A) {
 
         Node root=null;

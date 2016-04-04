@@ -4,7 +4,6 @@ import java.lang.reflect.Field;
 import java.lang.reflect.Modifier;
 
 /**
- *
  * Created by adelin.ghanayem@cayetanogaming.com on 2/8/16.
  */
 public class TryToAccessFinalModifiers {
@@ -16,7 +15,7 @@ public class TryToAccessFinalModifiers {
     public static void main(String[] args) {
         TryToAccessFinalModifiers tryToAccessFinalModifiers = cloneObject(new TryToAccessFinalModifiers());
         System.out.println(tryToAccessFinalModifiers);
-        assert tryToAccessFinalModifiers !=null;
+        assert tryToAccessFinalModifiers != null;
         assert tryToAccessFinalModifiers.equals(new TryToAccessFinalModifiers());
     }
 
@@ -49,9 +48,7 @@ public class TryToAccessFinalModifiers {
     }
 
 
-
-
-    private static<T,F> void copy(T clone, F obj){
+    private static <T, F> void copy(T clone, F obj) {
         try {
             for (Field field : obj.getClass().getDeclaredFields()) {
                 field.setAccessible(true);
