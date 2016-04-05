@@ -1,6 +1,11 @@
 package com;
 
 
+import com.classloaders.Person;
+
+import java.io.IOException;
+import java.io.InputStream;
+
 /**
  * Created by adelin.ghanayem@cayetanogaming.com on 11/11/15.
  */
@@ -10,6 +15,30 @@ public class Main {
     public static void main(String arg[]) {
 
 
+
+
+
+    }
+
+    public static class Person implements Cloneable {
+        private String string;
+
+        public Person(String string) {
+            this.string = string;
+        }
+
+        public String getString() {
+            return string;
+        }
+
+        public Object clone() {
+            try {
+                return super.clone();
+            } catch (CloneNotSupportedException e) {
+                e.printStackTrace();
+            }
+            return null;
+        }
     }
 
 
