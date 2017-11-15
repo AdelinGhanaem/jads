@@ -4,8 +4,6 @@ import org.junit.Test;
 
 import java.util.Random;
 
-import static com.sorting.MergeSort.printArray;
-import static org.junit.Assert.*;
 
 /**
  * Created by adelin.ghanayem@cayetanogaming.com on 9/29/15.
